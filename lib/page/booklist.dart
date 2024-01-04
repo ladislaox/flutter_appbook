@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_applibros/page/bookdetail.dart';
 
 
 class Booklist extends StatelessWidget {
@@ -13,37 +14,47 @@ class Booklist extends StatelessWidget {
           crossAxisCount: 2
         ),
         children: [
-          _bookCard(),
-          _bookCard(),
-          _bookCard(),
-          _bookCard(),
-          _bookCard(),
-          _bookCard(),
-          _bookCard(),
-          _bookCard(),
-          _bookCard(),
-          _bookCard(),
-          _bookCard(),
-          _bookCard(),
+          _bookCard(context),
+          _bookCard(context),
+          _bookCard(context),
+          _bookCard(context),
+          _bookCard(context),
+          _bookCard(context),
+          _bookCard(context),
+          _bookCard(context),
+          _bookCard(context),
+          _bookCard(context),
+          _bookCard(context),
+          _bookCard(context),
         ],
       ),
     );
   }
 
-  Widget _bookCard() {
-    return Card(
-      child: Container(
-        padding: const EdgeInsets.only(top: 8.0, left: 8.0,right: 8.0),
-        height: 150.0,
-        width: 150.0,
-        child: Column(
-          children: [
-            _bookCardImage(),
-            const SizedBox(height: 8),
-            _bookCardTitle(),
-            const SizedBox(height: 8),
-            _bookCardPrice(),
-          ],
+  Widget _bookCard(context) {
+    return GestureDetector(
+      onTap: () => {
+        print('gooooooo'),
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => BookDetail(),
+          )
+        )
+      },
+      child: Card(
+        child: Container(
+          padding: const EdgeInsets.only(top: 8.0, left: 8.0,right: 8.0),
+          height: 150.0,
+          width: 150.0,
+          child: Column(
+            children: [
+              _bookCardImage(),
+              const SizedBox(height: 8),
+              _bookCardTitle(),
+              const SizedBox(height: 8),
+              _bookCardPrice(),
+            ],
+          ),
         ),
       ),
     );
