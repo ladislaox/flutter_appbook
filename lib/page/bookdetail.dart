@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_applibros/page/book.dart';
 
 class BookDetail extends StatelessWidget {
-  const BookDetail({super.key});
+  //const BookDetail({super.key});
+
+  final Book mybook;
+  BookDetail({required this.mybook, super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -40,8 +45,8 @@ class BookDetail extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 5),
-              _bookbuy(),
-              _bookbuyv2(),
+              //_bookbuy(),
+              _bookbuyv2(bookprice: mybook.price),
               const SizedBox(height: 10),
               _bookcontent(),
               _bookcontent(),
@@ -58,7 +63,11 @@ class BookDetail extends StatelessWidget {
         _coverimage(),
         const SizedBox(width: 10.0),
         Expanded(
-          child: _info(),
+          child: _info(
+            booktitle: mybook.title,
+            bookauthor: mybook.author,
+            bookpublication: mybook.fechapubliacion,
+          ),
         )
       ],
     );
@@ -68,15 +77,19 @@ class BookDetail extends StatelessWidget {
     return Container(width: 80.0, height: 80.0, child: const Placeholder());
   }
 
-  Widget _info() {
+  Widget _info({
+      required booktitle, 
+      required bookauthor,
+      required bookpublication,
+    }) {
     return Container(
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('El hombre mas rico de babilonia asda sas sfas',
+          Text(booktitle,
               style: TextStyle(fontSize: 16.0)),
-          Text('Autor: desconocido', style: TextStyle(fontSize: 12.0)),
-          Text('Publicado 4 Enero 2024', style: TextStyle(fontSize: 12.0)),
+          Text('Autor: $bookauthor', style: TextStyle(fontSize: 12.0)),
+          Text('Publicado $bookpublication', style: TextStyle(fontSize: 12.0)),
         ],
       ),
     );
@@ -130,30 +143,30 @@ class BookDetail extends StatelessWidget {
       child: const Padding(
         padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 0),
         child: Text(
-          'Comprar  PEN 9000.00',
+          'Comprar  PEN 90.00',
           style: TextStyle(fontSize: 14.0, color: Colors.white),
         ),
       ),
     ));
   }
 
-  Widget _bookbuyv2() {
+  Widget _bookbuyv2({required bookprice}) {
     return AnimatedContainer(
-      // height: 100,
-      // width: 100,
       duration: const Duration(seconds: 2),
-      curve: Curves.easeIn,
       child: Material(
-        color: Color.fromARGB(255, 0, 86, 157),
+        color: const Color.fromARGB(255, 0, 86, 157),
         child: InkWell(
-          borderRadius: BorderRadius.circular(25),
           child: Container(
-            padding: EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(10.0),
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+              padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 0),
               child: Text(
-                'ax  dfa 9000.00',
-                style: TextStyle(fontSize: 14.0, color: Colors.white),
+                'Comprar PEN $bookprice',
+                style: const TextStyle(
+                  fontSize: 14.0, 
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500
+                ),
               ),
             ),
           ),
