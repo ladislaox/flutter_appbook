@@ -7,7 +7,6 @@ class BookDetail extends StatelessWidget {
   final Book mybook;
   BookDetail({required this.mybook, super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,37 +18,13 @@ class BookDetail extends StatelessWidget {
             children: [
               _bookinfo(),
               const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  _bookicons(
-                      icono: Icon(Icons.star,
-                          size: 20.0,
-                          color: Color.fromARGB(255, 103, 103, 103)),
-                      title: 'Valoración'),
-                  _bookicons(
-                      icono: Icon(Icons.book,
-                          size: 20.0,
-                          color: Color.fromARGB(255, 103, 103, 103)),
-                      title: 'Ebook'),
-                  _bookicons(
-                      icono: Icon(Icons.headset,
-                          size: 20.0,
-                          color: Color.fromARGB(255, 103, 103, 103)),
-                      title: 'Audiolibro'),
-                  _bookicons(
-                      icono: Icon(Icons.contact_page_rounded,
-                          size: 20.0,
-                          color: Color.fromARGB(255, 103, 103, 103)),
-                      title: 'Paginas'),
-                ],
-              ),
+              _bookvalorizacion(),
               const SizedBox(height: 5),
-              //_bookbuy(),
+              // _bookbuy(),
               _bookbuyv2(bookprice: mybook.price),
               const SizedBox(height: 10),
-              _bookcontent(),
-              _bookcontent(),
+              _bookcontent(bookcontent: mybook.content),
+              // _bookcontent(),
             ],
           ),
         ),
@@ -59,8 +34,9 @@ class BookDetail extends StatelessWidget {
 
   Widget _bookinfo() {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _coverimage(),
+        _coverimage(bookimage: mybook.imageUrl),
         const SizedBox(width: 10.0),
         Expanded(
           child: _info(
@@ -73,21 +49,58 @@ class BookDetail extends StatelessWidget {
     );
   }
 
-  Widget _coverimage() {
-    return Container(width: 80.0, height: 80.0, child: const Placeholder());
+  Widget _bookvalorizacion() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 20.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          _bookicons(
+              icono: Icon(Icons.star,
+                  size: 20.0, color: Color.fromARGB(255, 103, 103, 103)),
+              title: 'Valoración'),
+          _bookicons(
+              icono: Icon(Icons.book,
+                  size: 20.0, color: Color.fromARGB(255, 103, 103, 103)),
+              title: 'Ebook'),
+          _bookicons(
+              icono: Icon(Icons.headset,
+                  size: 20.0, color: Color.fromARGB(255, 103, 103, 103)),
+              title: 'Audiolibro'),
+          _bookicons(
+              icono: Icon(Icons.contact_page_rounded,
+                  size: 20.0, color: Color.fromARGB(255, 103, 103, 103)),
+              title: 'Paginas'),
+        ],
+      ),
+    );
+  }
+
+  Widget _coverimage({required bookimage}) {
+    return Container(
+        // color: Colors.red,
+        width: 150.0,
+        height: 200.0,
+        child: Image.asset(
+          // ignore: prefer_interpolation_to_compose_strings
+          'assets/img/' + bookimage,
+          width: 150.0,
+          height: 150.0,
+        ));
   }
 
   Widget _info({
-      required booktitle, 
-      required bookauthor,
-      required bookpublication,
-    }) {
+    required booktitle,
+    required bookauthor,
+    required bookpublication,
+  }) {
     return Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Text(booktitle,
-              style: TextStyle(fontSize: 16.0)),
+              style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold)),
           Text('Autor: $bookauthor', style: TextStyle(fontSize: 12.0)),
           Text('Publicado $bookpublication', style: TextStyle(fontSize: 12.0)),
         ],
@@ -111,17 +124,16 @@ class BookDetail extends StatelessWidget {
     );
   }
 
-  Widget _bookcontent() {
+  Widget _bookcontent({required String bookcontent}) {
     return Container(
-      child: const Column(
+      child: Column(
         children: [
           Text(
             'Capitulo 1',
             style: TextStyle(fontSize: 20),
           ),
           SizedBox(height: 5),
-          Text(
-              'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'),
+          Text(bookcontent),
         ],
       ),
     );
@@ -163,10 +175,9 @@ class BookDetail extends StatelessWidget {
               child: Text(
                 'Comprar PEN $bookprice',
                 style: const TextStyle(
-                  fontSize: 14.0, 
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500
-                ),
+                    fontSize: 14.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500),
               ),
             ),
           ),
