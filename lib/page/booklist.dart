@@ -89,7 +89,8 @@ class BookCard extends StatelessWidget {
       child: Text(
         'S/$price',
         textAlign: TextAlign.start,
-        style: const TextStyle(fontSize: 16),
+        style: const TextStyle(
+            fontSize: 16, color: Colors.red, fontWeight: FontWeight.bold),
       ),
     );
   }

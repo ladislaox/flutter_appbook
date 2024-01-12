@@ -128,10 +128,10 @@ class BookDetail extends StatelessWidget {
     return Container(
       child: Column(
         children: [
-          Text(
-            'Capitulo 1',
-            style: TextStyle(fontSize: 20),
-          ),
+          // Text(
+          //   'Capitulo 1',
+          //   style: TextStyle(fontSize: 20),
+          // ),
           SizedBox(height: 5),
           Text(bookcontent),
         ],
@@ -177,7 +177,7 @@ class BookDetail extends StatelessWidget {
                 style: const TextStyle(
                     fontSize: 14.0,
                     color: Colors.white,
-                    fontWeight: FontWeight.w500),
+                    fontWeight: FontWeight.bold),
               ),
             ),
           ),
