@@ -79,6 +79,8 @@ class BookCard extends StatelessWidget {
     return Container(
       child: Text(
         title,
+        maxLines: 2, // Limita el número de líneas mostradas
+        overflow: TextOverflow.ellipsis,
       ),
     );
   }

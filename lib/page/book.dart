@@ -64,7 +64,7 @@ final List<Book> books = [
   Book(
     title: 'International Economics: Theory and Policy, Global Edition ',
     price: 100.00,
-    imageUrl: "BUILDING-A-STORY-BRAND.jpg",
+    imageUrl: "INTERNATIONAL-TRADE.jpg",
     content:
         '"International Economics: Theory and Policy" by Paul Krugman and Maurice Obstfeld is a market-leading textbook that offers an intuitive introduction to economic theory followed by self-contained chapters on key policy applications. The Eighth Edition incorporates the latest research and covers current issues like outsourcing, economic geography, trade and the environment, financial derivatives, the subprime crisis, and China\'s exchange rate policies.',
     type: 'Audiolibro',
