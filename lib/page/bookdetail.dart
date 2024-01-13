@@ -57,7 +57,7 @@ class BookDetail extends StatelessWidget {
           alignment: Alignment.center, 
           child: Container(
             width: 290.0,
-            height: 280.0,
+            height: 300.0,
             color: Color.fromARGB(255, 215, 212, 212),
             child:
               Column(
@@ -67,6 +67,7 @@ class BookDetail extends StatelessWidget {
                   _btnMedioPago(mediopago: 'Pago con Yape'),
                   _btnMedioPago(mediopago: 'Pago con Tarjeta de Credito'),
                   _btnMedioPago(mediopago: 'Pago con Tarjeta de Débito'),
+                  _btnCerrarModal(),
                 ],
               ) 
           ),
@@ -75,7 +76,7 @@ class BookDetail extends StatelessWidget {
     );
   }
 
-    Widget _btnMedioPago({required mediopago}) {
+  Widget _btnMedioPago({required mediopago}) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 0),
       child: AnimatedContainer(
@@ -105,6 +106,26 @@ class BookDetail extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  Widget _btnCerrarModal() {    
+    return Column( 
+      children: [
+        TextButton(
+              onPressed: () {
+                // Lógica cuando se presiona el botón
+                print('Cerrar modal');
+              },
+              child: const Text(
+                'Cerrar',
+                style: TextStyle(
+                  fontSize: 14.0,
+                  color: Colors.black,
+                ),
+              ),
+        ),
+      ],   
     );
   }
 
