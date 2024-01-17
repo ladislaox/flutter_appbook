@@ -16,10 +16,10 @@ Aqui se creo un objeto de tipo `Book` para recibir como parametro el libro selec
 - Muestra boton de login con Google
 
 ## Descargar app para Android
-Ejemplo de como descargar e instalar la app
+Ejemplo de como [descargar](/apk/app-release.apk) e instalar la aplicación de libro
 
 ![Listado de libros](assets/screenshot/install.png)
-[Descargar apk](/apk/app-release.apk)
+
 
 ## Capturas de pantalla
 
