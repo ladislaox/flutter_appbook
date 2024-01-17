@@ -1,23 +1,24 @@
-# Descargar Instalador de la aplicacion appBook para ANDROID
-[Descargar apk](/apk/app-release.apk)
-
-
 # flutter_applibros
 
-A new Flutter project.
+Esta es un ejemplo de aplicación de libros desarrollada en `Flutter`.
 
-## Getting Started
+## Listado de libros
+En el listado de libros se creo una clase llamada `Book` donde hemos creado una lista(`List`) de libros para gurdar toda la información de los 12 libros.
 
-This project is a starting point for a Flutter application.
+## Detalle del libro
+Aqui se creo un objeto de tipo `Book` para recibir como parametro el libro selecionado.
 
-A few resources to get you started if this is your first Flutter project:
+- Muestra imagen del libro
+- Muestra resumen
+- Muestra precio
+- Muestra modal de metodo de pago
+- Muestra formulario de registro
+- Muestra boton de login con Google
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Descargar app para Android
+[Descargar apk](https://goo.su/NByZs)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Capturas de pantalla
 
 ![Listado de libros](assets/screenshot/01.png)
 ![Detalle del libro](assets/screenshot/02.png)
