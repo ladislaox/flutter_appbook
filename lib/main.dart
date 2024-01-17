@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_applibros/page/details/bookdetail.dart';
 import 'package:flutter_applibros/page/books/booklist.dart';
 
 void main() {
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       //home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      home: Booklist(),
+      home: const Booklist(),
       //home: const BookDetail(),
     );
   }
