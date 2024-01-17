@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_applibros/page/book.dart';
-import 'package:flutter_applibros/page/bookdetail.dart';
+import 'package:flutter_applibros/page/models/book.dart';
+import 'package:flutter_applibros/page/details/bookdetail.dart';
 
 class Booklist extends StatelessWidget {
   const Booklist({super.key});
