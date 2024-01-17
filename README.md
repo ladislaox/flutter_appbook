@@ -3,7 +3,7 @@
 Esta es un ejemplo de aplicación de libros desarrollada en `Flutter`.
 
 ## Listado de libros
-En el listado de libros se creo una clase llamada `Book` donde hemos creado una lista(`List`) de libros para gurdar toda la información de los 12 libros.
+En el listado de libros se creo una clase llamada `Book` donde hemos creado una lista(`List`) de libros para guardar toda la información de los 12 libros.
 
 ## Detalle del libro
 Aqui se creo un objeto de tipo `Book` para recibir como parametro el libro selecionado.
@@ -16,7 +16,10 @@ Aqui se creo un objeto de tipo `Book` para recibir como parametro el libro selec
 - Muestra boton de login con Google
 
 ## Descargar app para Android
-[Descargar apk](https://goo.su/NByZs)
+Ejemplo de como descargar e instalar la app
+
+![Listado de libros](assets/screenshot/install.png)
+[Descargar apk](/apk/app-release.apk)
 
 ## Capturas de pantalla
 
