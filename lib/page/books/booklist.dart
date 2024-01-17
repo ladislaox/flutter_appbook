@@ -9,19 +9,22 @@ class Booklist extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Listado de libros')),
-      body: GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, // Número de columnas en el grid
-          crossAxisSpacing: 8.0, // Espaciado entre columnas
-          mainAxisSpacing: 8.0, // Espaciado entre filas
-          childAspectRatio:
-              0.7, // Relación de aspecto (ajusta según tus necesidades)
+      body: Padding(
+        padding: const EdgeInsets.only(left: 8.0, right: 8.0, bottom: 16.0),
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, // Número de columnas en el grid
+            crossAxisSpacing: 8.0, // Espaciado entre columnas
+            mainAxisSpacing: 8.0, // Espaciado entre filas
+            childAspectRatio:
+                0.7, // Relación de aspecto (ajusta según tus necesidades)
+          ),
+          itemCount: books.length,
+          itemBuilder: (context, index) {
+            return BookCard(book: books[index]);
+          },
+          // gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         ),
-        itemCount: books.length,
-        itemBuilder: (context, index) {
-          return BookCard(book: books[index]);
-        },
-        // gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
       ),
     );
   }
